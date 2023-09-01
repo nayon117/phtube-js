@@ -8,33 +8,110 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <header class="container mx-auto px-4 md:px-8 lg:px-16">
+        <nav>
+            <div class="navbar ">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost btn-circle">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                    </label>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a>Contact</a></li>
+                      <li><a>About</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="navbar-center">
+                  <a class="btn btn-ghost normal-case text-2xl font-bold text-[#FF1F3D]">BlogIQ</a>
+                </div>
+                <div class="navbar-end">
+                  <button class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  </button>
+                  <button class="btn btn-ghost btn-circle">
+                    <div class="indicator">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                      <span class="badge badge-xs badge-secondary indicator-item"></span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+        </nav>
+    </header>
     <!-- question answer  -->
-    <main>
-       <div class="mt-5 space-y-3 p-4">
-        <h2 class="font-bold text-2xl">Question no-1:Discuss the scope of var, let, and const</h2>
-        <h3 >  
-            var: var has functional-level scope and can be redeclared and updated throughout the function. <br> <br>
-            let: let has block-level scope and allows reassignment but not redeclartion in the same scope. <br> <br>
-            const:const also has block-level scope and is used for variables that should not be reassigned after initial declartion.
+    <main class="container mx-auto px-4 md:px-8 lg:px-16 py-4 my-5">
+        <!-- first question  -->
+       <div class="mt-5 space-y-5 ">
+        <h2 class="font-bold text-3xl bg-base-200 p-2 inline-block rounded-md">Question no-1:Discuss the scope of var, let, and const</h2>
+        <img class="rounded-md" src="./image/ques1.png" alt="var-let-const">
+        <h3 class="text-xl font-medium" >  
+            <span class="bg-gray-300 px-2 py-1 rounded">var:</span> var has functional-level scope and can be redeclared and updated throughout the function.
+            var declarations are hoisted to the top of their containing function or global scope.<br> <br>
+            <span class="bg-gray-300 px-2 py-1 rounded">let:</span> let has block-level scope and allows reassignment but not redeclartion in the same scope.let are also hoisted, but they are not initialized <br> <br>
+            <span class="bg-gray-300 px-2 py-1 rounded">const:</span>const also has block-level scope and is used for variables that should not be reassigned after initial declartion. As well as const  are also hoisted like let and var , but they are not initialized
         </h3> 
        </div>
+
         <!-- second question  -->
 
-       <div class="my-5 space-y-3 p-4">
-        <h2  class="font-bold text-2xl">Question no-2:Tell the use cases of null and undefined</h2>
-        <h3>Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value.</h3> 
+       <div class="mt-16 space-y-5">
+        <h2  class="font-bold text-3xl bg-base-200 p-2 inline-block rounded-md">Question no-2:Tell the use cases of null and undefined</h2>
+        <img class="rounded-md" src="./image/ques2.jpg" alt="">
+        <h3 class="text-xl font-medium"> 
+            <span class="bg-gray-300 px-2 py-1 rounded">undefined:</span> undefined means that the value hasn't been set or doesn't exist yet. It's like an empty slot waiting for a value. <br><br>
+
+            <span class="bg-gray-300 px-2 py-1 rounded">null:</span> This is like an intentional empty slot. It's used when you want to say, "I want this to be empty on purpose." It's a way to tell the code that there's no value there.
+        </h3> 
        </div>
 
         <!-- third question  -->
 
-        <div class="space-y-3 p-4">
-        <h2  class="font-bold text-2xl">Question no-3:What do you mean by REST API?</h2>
-        <h3> An API, or application programming interface, is a set of rules that define how applications or devices can connect to and communicate with each other. A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.</h3>
+        <div class="space-y-5 mt-16  ">
+        <h2  class="font-bold text-3xl bg-base-200  p-2 inline-block rounded-md">Question no-3:What do you mean by REST API?</h2>
+        <img class="rounded-md" src="./image/ques3.jpg" alt="REST API image">
+        <h3 class="text-xl font-medium"><span class="bg-gray-300 px-2 py-1 rounded">REST API:</span> An API, or application programming interface, is a set of rules that define how applications or devices can connect to and communicate with each other. A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.</h3>
         </div>
         
-        <div class="mt-5 p-4">
-           <a href="index.html"> <button class="btn bg-[#FF1F3D] text-white mx-auto">Back</button> </a>
+        <div class="mt-10  ">
+           <a href="index.html"> <button class="btn bg-[#FF1F3D] text-white mx-auto">Back to previous page</button> </a>
         </div>
     </main>
+    <!-- footer  -->
+    <footer class="footer p-10   text-base-content">
+        <div>
+          <span class="footer-title">Services</span> 
+          <a class="link link-hover">Branding</a> 
+          <a class="link link-hover">Design</a> 
+          <a class="link link-hover">Marketing</a> 
+          <a class="link link-hover">Advertisement</a>
+        </div> 
+        <div>
+          <span class="footer-title">Company</span> 
+          <a class="link link-hover">About us</a> 
+          <a class="link link-hover">Contact</a> 
+          <a class="link link-hover">Jobs</a> 
+          <a class="link link-hover">Press kit</a>
+        </div> 
+        <div>
+          <span class="footer-title">Legal</span> 
+          <a class="link link-hover">Terms of use</a> 
+          <a class="link link-hover">Privacy policy</a> 
+          <a class="link link-hover">Cookie policy</a>
+        </div> 
+        <div>
+          <span class="footer-title">Newsletter</span> 
+          <div class="form-control w-80">
+            <label class="label">
+              <span class="label-text">Enter your email address</span>
+            </label> 
+            <div class="relative">
+              <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" /> 
+              <button class="btn bg-[#FF1F3D] text-white absolute top-0 right-0 rounded-l-none">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
