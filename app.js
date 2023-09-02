@@ -14,7 +14,7 @@ const displayCategory = (categories) => {
     categories.forEach(category => {
         const div = document.createElement("div")
         div.innerHTML = `
-        <a onclick="handleClick('${category.category_id}')" class="tab"><button class="bg-gray-200 text-black font-medium rounded-md px-3 py-2 border-none  mt-5  focus:bg-[#FF1F3D] focus:text-white">${category.category}</button></a> 
+        <a onclick="handleClick('${category.category_id}')" class="tab"><button class="bg-gray-200 text-black font-medium rounded-md px-3 py-2 border-none mt-5 focus:bg-[#FF1F3D] focus:text-white">${category.category}</button></a> 
         `
         tabContainer.appendChild(div)
     });
@@ -51,7 +51,7 @@ const displayCard = (categoryId) => {
     else {
    categoryId.forEach(itemId => {
     const div = document.createElement("div")
-    div.className="card  mt-4 h-96 bg-base-100"
+    div.className="card  h-96 bg-base-100"
     div.setAttribute("views", itemId.others.views);
         div.innerHTML = `
         <div class="relative">
