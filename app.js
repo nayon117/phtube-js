@@ -35,9 +35,7 @@ const displayCard = (categoryId) => {
     const cardContainer = document.getElementById("card-container")
     cardContainer.innerHTML = "";
 
-    categoryId.sort((a, b) => b.views - a.views)
-
-    // use conditional to verify 
+    // use conditional to verify if no card found show "no data found"else show card  
 
     if (categoryId.length === 0) {
         const noData = document.createElement("div")
@@ -56,22 +54,25 @@ const displayCard = (categoryId) => {
     div.className="card  mt-4 h-96 bg-base-100"
     div.setAttribute("views", itemId.others.views);
         div.innerHTML = `
-        <div class="object-cover relative  ">
-        <figure><img  class="w-full h-48 rounded-md " src=${itemId?.thumbnail }  alt="images" /></figure>
-        <span class="absolute overflow-hidden bottom-[5%] left-[45%] bg-black text-white p-1 rounded-lg" >${itemId.others.posted_date ? convertSeconds(itemId.others.posted_date) : "" }</span>
+        <div class="relative">
+        <figure><img  class="w-full h-52 md:h-48 rounded-md" src=${itemId?.thumbnail }  alt="images" /></figure>
+
+        <span class="absolute bottom-[3%] left-[50%] md:left-[45%] lg:left-[35%]  rounded-md bg-black text-white" >${itemId.others.posted_date ? convertSeconds(itemId.others.posted_date) : '' }</span>
+          
         </div>
-            <div class="flex gap-4 p-3 my-2">
-            <div class="w-1/5">
-            <img class="w-10 h-10 rounded-full" src= ${itemId?.authors[0]?.profile_picture} >
-            </div>
-            <div class="space-y-2"> 
-            <p class="text-xl font-bold">${itemId?.title}</p>
-            <div class="flex  items-center gap-2">
-            <p>${itemId?.authors[0]?.profile_name}</p>
-            <p>${itemId?.authors[0]?.verified ? '<img src="./image/badge.png">' : ''}</p>
-            </div>
-            <p ><span>${itemId?.others?.views}</span> views</p>
-            </div>  
+
+        <div class="flex gap-4 p-3 my-2">
+        <div class="w-1/5">
+        <img class="w-10 h-10 rounded-full" src= ${itemId?.authors[0]?.profile_picture} >
+        </div>
+        <div class="space-y-2"> 
+        <p class="text-xl font-bold">${itemId?.title}</p>
+        <div class="flex  items-center gap-2">
+        <p>${itemId?.authors[0]?.profile_name}</p>
+        <p>${itemId?.authors[0]?.verified ? '<img src="./image/badge.png">' : ''}</p>
+        </div>
+        <p ><span>${itemId?.others?.views}</span> views</p>
+        </div>  
         </div>
         `
         cardContainer.appendChild(div)
@@ -86,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("view-button").addEventListener("click", sortByViews); 
 });
 
-// use sort by views function 
+// implement sortByViews function 
 
 const sortByViews = () => {
     const cardContainer = document.getElementById("card-container");
@@ -108,7 +109,7 @@ const sortByViews = () => {
 function  convertSeconds (seconds) {
     const hours = Math.floor(seconds / 3600)
     const minutes = Math.floor((seconds % 3600) / 60)
-    return `${hours} hrs  ${minutes} min ago`
+    return `${hours}hrs  ${minutes} min ago`
 }
 
 // call handleClick function to show card by default in the page 
